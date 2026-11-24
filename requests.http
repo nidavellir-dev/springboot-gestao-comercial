@@ -1,0 +1,12 @@
+### Listar produtos
+GET https://localhost:8080/produtos
+
+
+### Criar produto
+POST https://localhost:8080/produtos
+Content-Type: application/json
+
+{
+  "nome": "Teclado",
+  "preco": 15000
+}
