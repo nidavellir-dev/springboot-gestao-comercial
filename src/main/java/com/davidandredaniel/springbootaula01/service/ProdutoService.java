@@ -6,6 +6,7 @@ import com.davidandredaniel.springbootaula01.dto.ProdutoRequestDTO;
 import com.davidandredaniel.springbootaula01.dto.ProdutoResponseDTO;
 import com.davidandredaniel.springbootaula01.entity.Categoria;
 import com.davidandredaniel.springbootaula01.entity.Produto;
+import com.davidandredaniel.springbootaula01.exception.CategoriaNaoEncontradaException;
 import com.davidandredaniel.springbootaula01.exception.ProdutoNaoEncontradoException;
 import com.davidandredaniel.springbootaula01.repository.CategoriaRepository;
 import com.davidandredaniel.springbootaula01.repository.ProdutoRepository;
@@ -36,7 +37,7 @@ public class ProdutoService {
     public ProdutoResponseDTO criar(ProdutoRequestDTO dto) {
 
         Categoria categoria = categoriaRepository.findById(dto.getCategoriaId())
-                .orElseThrow(() -> new IllegalArgumentException(
+                .orElseThrow(() -> new CategoriaNaoEncontradaException(
                         "A categoria com o ID " + dto.getCategoriaId()
                                 + " não foi encontrada."
                 ));

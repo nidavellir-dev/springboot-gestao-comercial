@@ -47,6 +47,13 @@
             <artifactId>spring-boot-starter-flyway</artifactId>
         </dependency>
 
+        <!-- Documentação da API: OpenAPI e Swagger UI -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>3.1.1</version>
+        </dependency>
+
         <!-- Suporte específico para MySQL -->
         <dependency>
             <groupId>org.flywaydb</groupId>
